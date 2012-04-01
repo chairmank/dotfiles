@@ -1,0 +1,73 @@
+call pathogen#infect()
+call pathogen#runtime_append_all_bundles()
+
+set term=xterm
+set guifont=Monospace\ 15
+set background=dark
+colorscheme koehler
+set guioptions-=e
+set guioptions-=m
+set guioptions-=r
+set guioptions+=l
+set guioptions-=T
+set guioptions+=c
+set wrap
+set whichwrap+=<
+set whichwrap+=>
+set title
+set showcmd
+set showmode
+set number
+set ruler
+set ls=2
+set modeline
+set colorcolumn=72
+set textwidth=72
+set encoding=utf-8
+set backspace=indent,eol,start
+set wildmode=longest,list
+set wildmenu
+set expandtab
+set nostartofline
+set nosmartindent
+set nosmarttab
+set nocindent
+set showtabline=2
+set list listchars=eol:¬,tab:»\ ,trail:·
+set showmatch
+set hlsearch
+
+syntax on
+filetype plugin indent on
+runtime! synmenu.vim
+au BufRead * se formatoptions=q
+au BufNewFile,BufRead *.thrift set filetype=thrift
+au BufNewFile,BufRead *.clj set filetype=clojure
+
+" tab spacing by file type
+autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4
+autocmd FileType java setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType xml setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType clojure setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType thrift setlocal tabstop=2 shiftwidth=2 softtabstop=2
+
+" strip trailing whitespace
+" this function was written by John McFarlane https://github.com/jmcfarlane
+function! StripTrailingWhitespace()
+    normal mZ
+    %s/\s\+$//e
+    if line("'Z") != line(".")
+        echo "Stripped whitespace\n"
+    endif
+    normal `Z
+endfunction
+autocmd BufWritePre * :call StripTrailingWhitespace()
+
+
+" Settings for VimClojure
+let vimclojure#HightlightBuiltins=1 " highlight Clojure's builtins
+let vimclojure#ParenRainbow=1 " rainbow parentheses
+let vimclojure#DynamicHighlighting=1 " dynamically highlight functions
+
+" binding for NERDTree
+command NT NERDTreeToggle

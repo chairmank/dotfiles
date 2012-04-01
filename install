@@ -1,0 +1,17 @@
+#!/bin/sh
+
+BASEDIR=`dirname $(readlink -f $0)`
+
+# Create symlinks to vim configuration
+VIMRC="$HOME/.vimrc"
+if [ ! -f $VIMRC ]; then
+  ln -s $BASEDIR/src/vimrc $VIMRC
+else
+  echo "$VIMRC already exists; skipping"
+fi
+VIMDIR="$HOME/.vim"
+if [ ! -d $VIMDIR ]; then
+    ln -s $BASEDIR/src/vim $VIMDIR
+else
+  echo "$VIMDIR already exists; skipping"
+fi

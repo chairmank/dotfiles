@@ -1,0 +1,7 @@
+Xft.antialias: 1
+XTerm*background: #000000
+XTerm*foreground: #cccccc
+XTerm*scrollBar: true
+XTerm*faceName: Monospace-15
+XTerm*jumpScroll: true
+XTerm*saveLines: 100000

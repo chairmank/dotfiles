@@ -2,15 +2,26 @@
 
 BASEDIR=`dirname $(readlink -f $0)`
 
+# Create symlink to .Xresources
+XRESOURCES="$HOME/.Xresources"
+if [ ! -f $XRESOURCES ]; then
+  echo "Creating file symlink $XRESOURCES"
+  ln -s $BASEDIR/src/Xresources $XRESOURCES
+else
+  echo "$XRESOURCES file already exists; skipping"
+fi
+
 # Create symlinks to vim configuration
 VIMRC="$HOME/.vimrc"
 if [ ! -f $VIMRC ]; then
+  echo "Creating file symlink $VIMRC"
   ln -s $BASEDIR/src/vimrc $VIMRC
 else
   echo "$VIMRC file already exists; skipping"
 fi
 VIMDIR="$HOME/.vim"
 if [ ! -d $VIMDIR ]; then
+  echo "Creating directory symlink $VIMDIR"
     ln -s $BASEDIR/src/vim $VIMDIR
 else
   echo "$VIMDIR directory already exists; skipping"
@@ -20,6 +31,7 @@ fi
 # http://projects.haskell.org/xmobar/
 XMOBARRC="$HOME/.xmobarrc"
 if [ ! -f $XMOBARRC ]; then
+  echo "Creating file symlink $XMOBARRC"
   ln -s $BASEDIR/src/xmobarrc $XMOBARRC
 else
   echo "$XMOBARRC file already exists; skipping"
@@ -28,6 +40,7 @@ fi
 # Create symlink to xmonad configuration
 XMONADDIR="$HOME/.xmonad"
 if [ ! -d $XMONADDIR ]; then
+  echo "Creating directory symlink $XMONADDIR"
   ln -s $BASEDIR/src/xmonad $XMONADDIR
 else
   echo "$XMONADDIR directory already exists; skipping"

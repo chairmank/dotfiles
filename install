@@ -15,3 +15,12 @@ if [ ! -d $VIMDIR ]; then
 else
   echo "$VIMDIR already exists; skipping"
 fi
+
+# Create symlink to xmobarrc
+# http://projects.haskell.org/xmobar/
+XMOBARRC="$HOME/.xmobarrc"
+if [ ! -f $XMOBARRC ]; then
+  ln -s $BASEDIR/src/xmobarrc $XMOBARRC
+else
+  echo "$XMOBARRC already exists; skipping"
+fi

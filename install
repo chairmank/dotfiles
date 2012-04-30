@@ -7,13 +7,13 @@ VIMRC="$HOME/.vimrc"
 if [ ! -f $VIMRC ]; then
   ln -s $BASEDIR/src/vimrc $VIMRC
 else
-  echo "$VIMRC already exists; skipping"
+  echo "$VIMRC file already exists; skipping"
 fi
 VIMDIR="$HOME/.vim"
 if [ ! -d $VIMDIR ]; then
     ln -s $BASEDIR/src/vim $VIMDIR
 else
-  echo "$VIMDIR already exists; skipping"
+  echo "$VIMDIR directory already exists; skipping"
 fi
 
 # Create symlink to xmobarrc
@@ -22,5 +22,13 @@ XMOBARRC="$HOME/.xmobarrc"
 if [ ! -f $XMOBARRC ]; then
   ln -s $BASEDIR/src/xmobarrc $XMOBARRC
 else
-  echo "$XMOBARRC already exists; skipping"
+  echo "$XMOBARRC file already exists; skipping"
+fi
+
+# Create symlink to xmonad configuration
+XMONADDIR="$HOME/.xmonad"
+if [ ! -d $XMONADDIR ]; then
+  ln -s $BASEDIR/src/xmonad $XMONADDIR
+else
+  echo "$XMONADDIR directory already exists; skipping"
 fi

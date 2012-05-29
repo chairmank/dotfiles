@@ -1,6 +1,39 @@
 #!/bin/sh
 
+# git submodules must be updated before running this script for the
+# first time
+
 BASEDIR=`dirname $(readlink -f $0)`
+
+# Copy git-completion.bash to ~/.bash_completion.d/
+BASH_COMPLETION="$HOME/.bash_completion.d"
+if [ ! -d $BASH_COMPLETION ]; then
+  echo "Creating folder $BASH_COMPLETION"
+  mkdir $BASH_COMPLETION
+fi
+GIT_COMPLETION="$BASH_COMPLETION/git-completion.bash"
+if [ ! -f $GIT_COMPLETION ]; then
+  echo "Creating file symlink $GIT_COMPLETION"
+  ln -s $BASEDIR/lib/git/contrib/completion/git-completion.bash $GIT_COMPLETION
+else
+  echo "$GIT_COMPLETION file already exists; skipping"
+fi
+
+# Create symlinks to .bashrc and .bash_aliases
+BASHRC="$HOME/.bashrc"
+if [ ! -f $BASHRC ]; then
+  echo "Creating file symlink $BASHRC"
+  ln -s $BASEDIR/src/bashrc $BASHRC
+else
+  echo "$BASHRC file already exists; skipping"
+fi
+BASH_ALIASES="$HOME/.bashrc"
+if [ ! -f $BASH_ALIASES ]; then
+  echo "Creating file symlink $BASH_ALIASES"
+  ln -s $BASEDIR/src/bash_aliases $BASH_ALIASES
+else
+  echo "$BASH_ALIASES file already exists; skipping"
+fi
 
 # Create symlink to .xsession
 XSESSION="$HOME/.xsession"

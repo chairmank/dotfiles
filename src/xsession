@@ -1,0 +1,5 @@
+# map right command button on my MacBook to middle mouse
+xmodmap -e "keycode 134 = Pointer_Button2"
+xkbset m
+
+exec xmonad

@@ -2,6 +2,15 @@
 
 BASEDIR=`dirname $(readlink -f $0)`
 
+# Create symlink to .xsession
+XSESSION="$HOME/.xsession"
+if [ ! -f $XSESSION ]; then
+  echo "Creating file symlink $XSESSION"
+  ln -s $BASEDIR/src/xsession $XSESSION
+else
+  echo "$XSESSION file already exists; skipping"
+fi
+
 # Create symlink to .Xresources
 XRESOURCES="$HOME/.Xresources"
 if [ ! -f $XRESOURCES ]; then

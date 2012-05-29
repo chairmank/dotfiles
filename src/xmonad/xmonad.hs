@@ -60,7 +60,7 @@ myManageHook = composeAll
 
 -- keybindings
 toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
-dmenu_command = "dmenu_run -nb '#000000' -nf '#cccccc' -sb '#000000' -sf '#ff0000'"
+dmenu_command = "dmenu_run -fa 'Monospace-15' -nb '#000000' -nf '#cccccc' -sb '#000000' -sf '#ff0000'"
 -- delete the old dmenu command
 delKeys :: XConfig l -> [(KeyMask, KeySym)]
 delKeys conf@(XConfig {modMask = modMask}) =

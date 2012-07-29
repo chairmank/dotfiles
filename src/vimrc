@@ -51,9 +51,12 @@ autocmd FileType xml setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType clojure setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType thrift setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
-" strip trailing whitespace
+" highlight trailing whitespace
+highlight TrailingWhiteSpace ctermbg=red guibg=red
+match TrailingWhitespace /\s\+$/
+
 " this function was written by John McFarlane https://github.com/jmcfarlane
-function! StripTrailingWhitespace()
+function! Stripws()
     normal mZ
     %s/\s\+$//e
     if line("'Z") != line(".")
@@ -61,8 +64,6 @@ function! StripTrailingWhitespace()
     endif
     normal `Z
 endfunction
-autocmd BufWritePre * :call StripTrailingWhitespace()
-
 
 " Settings for VimClojure
 let vimclojure#HightlightBuiltins=1 " highlight Clojure's builtins

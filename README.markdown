@@ -11,7 +11,8 @@ that they will not trash your system. Use at your own risk.
 - [xmonad](http://xmonad.org/), version 0.91
 - [xmobar](http://projects.haskell.org/xmobar/), version 0.11
 - [dmenu](https://github.com/chairmanK/dmenu)
-- [Vim](http://www.vim.org), version 7.3
+- [Vim](http://www.vim.org), version 7.3 (compiled with multi-byte
+  support)
 
 The following projects are included as sub-modules:
 

@@ -1,17 +1,18 @@
-Config { 
+Config {
     font = "xft:Monospace-15"
   , bgColor = "#000000"
   , fgColor = "#cccccc"
   , position = Top
   , lowerOnStart = True
-  , commands = [ 
+  , commands = [
       Run StdinReader
-    , Run Cpu ["-t","CPU <total>"] 10
-    , Run Memory ["-t","Memory <usedratio>%"] 10
+    , Run Cpu ["-t", "CPU <total>"] 10
+    , Run Memory ["-t", "Memory <usedratio>%"] 10
+    , Run Battery ["-t", "Power <left>"] 30
     , Run Date "%a %Y %b %d %H:%M:%S" "date" 10
     ]
   , sepChar = "%"
   , alignSep = "}{"
-  , template = "%StdinReader% }{ | %cpu% | %memory% | %date% "
+  , template = "%StdinReader% }{ | %cpu% | %memory% | %battery% | %date% "
   }
 

@@ -1,12 +1,16 @@
-alias ll='ls -lcF'
-alias la='ll -A'
-alias px='ps auxw'
-
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
     alias grep='grep --color=auto'
-    alias less='less -r'
+    alias less='less -R'
+    alias tree='tree -C'
     alias vless='vim -u /usr/local/share/vim/vim73/macros/less.sh'
 fi
+
+alias ll='ls -lcFq --group-directories-first'
+alias la='ll -a'
+alias px='ps aux'
+alias rm='rm -i'
+alias mv='mv -i'
+alias cp='cp -i'

@@ -36,7 +36,7 @@ if [ ! -f $BASHRC ]; then
 else
   echo "$BASHRC file already exists; skipping"
 fi
-BASH_ALIASES="$HOME/.bashrc"
+BASH_ALIASES="$HOME/.bash_aliases"
 if [ ! -f $BASH_ALIASES ]; then
   echo "Creating file symlink $BASH_ALIASES"
   ln -s $BASEDIR/src/bash_aliases $BASH_ALIASES

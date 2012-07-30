@@ -5,6 +5,15 @@
 
 BASEDIR=`dirname $(readlink -f $0)`
 
+# Create symlink to .profile
+PROFILE="$HOME/.profile"
+if [ ! -f $PROFILE ]; then
+  echo "Creating file symlink $PROFILE"
+  ln -s $BASEDIR/src/profile $PROFILE
+else
+  echo "$PROFILE file already exists; skipping"
+fi
+
 # Copy git-completion.bash to ~/.bash_completion.d/
 BASH_COMPLETION="$HOME/.bash_completion.d"
 if [ ! -d $BASH_COMPLETION ]; then

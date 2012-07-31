@@ -2,6 +2,7 @@
 xmodmap -e "keycode 134 = Pointer_Button2"
 xkbset m
 
+hsetroot
 xsetroot -cursor_name crosshair
 
 # http://superuser.com/questions/371321/xmonad-focused-window-border-issues-with-virtualbox-vmware-guest-additions

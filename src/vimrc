@@ -1,6 +1,5 @@
 call pathogen#infect()
 call pathogen#runtime_append_all_bundles()
-
 set term=xterm
 set guifont=Monospace\ 15
 set background=dark
@@ -53,7 +52,10 @@ autocmd FileType thrift setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
 " highlight trailing whitespace
 highlight TrailingWhiteSpace ctermbg=red guibg=red
-match TrailingWhitespace /\s\+$/
+autocmd BufWinEnter * match TrailingWhitespace /\s\+$/
+autocmd InsertEnter * match TrailingWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match TrailingWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
 
 " this function was written by John McFarlane https://github.com/jmcfarlane
 function! Stripws()

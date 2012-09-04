@@ -16,3 +16,6 @@
 [submodule "lib/git"]
 	path = lib/git
 	url = https://github.com/git/git.git
+[submodule "lib/vim-surround"]
+	path = lib/vim-surround
+	url = https://github.com/tpope/vim-surround.git

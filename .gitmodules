@@ -19,3 +19,6 @@
 [submodule "lib/vim-surround"]
 	path = lib/vim-surround
 	url = https://github.com/tpope/vim-surround.git
+[submodule "lib/ctrlp.vim"]
+	path = lib/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim.git

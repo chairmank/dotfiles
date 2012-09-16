@@ -3,4 +3,5 @@ xsetroot -cursor_name crosshair
 
 # http://superuser.com/questions/371321/xmonad-focused-window-border-issues-with-virtualbox-vmware-guest-additions
 xcompmgr &
+xautolock -locker slock -time 5 &
 exec xmonad

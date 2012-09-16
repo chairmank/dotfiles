@@ -13,6 +13,7 @@ that they will not trash your system. Use at your own risk.
 - [dmenu](https://github.com/chairmanK/dmenu)
 - [Vim](http://www.vim.org), version 7.3 (compiled with multi-byte
   support)
+- [slock](http://tools.suckless.org/slock) and xautolock
 
 The following projects are included as sub-modules:
 

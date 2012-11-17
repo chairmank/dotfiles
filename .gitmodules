@@ -22,3 +22,6 @@
 [submodule "lib/ctrlp.vim"]
 	path = lib/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim.git
+[submodule "lib/paredit.vim"]
+	path = lib/paredit.vim
+	url = https://github.com/vim-scripts/paredit.vim.git

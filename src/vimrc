@@ -34,6 +34,7 @@ set showtabline=2
 set list listchars=eol:¬,tab:»\ ,trail:·
 set showmatch
 set hlsearch
+set incsearch
 let mapleader = ","
 
 " Given file size in bytes, return a human readable string

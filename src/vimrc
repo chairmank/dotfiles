@@ -17,7 +17,6 @@ set title
 set showcmd
 set showmode
 set number
-set ruler
 set ls=2
 set modeline
 set colorcolumn=72
@@ -36,6 +35,29 @@ set list listchars=eol:¬,tab:»\ ,trail:·
 set showmatch
 set hlsearch
 let mapleader = ","
+
+" Given file size in bytes, return a human readable string
+function! HumanReadableSize(size)
+    let size = a:size
+    let suffixes = ['', 'K', 'M', 'G']
+    let i = 0
+    while size > 1024
+        let size = size / 1024.0
+        let i = i + 1
+    endwhile
+    return printf("%.f%s", size, suffixes[i])
+endfunction
+
+" custom statusline
+set statusline=\  " clear
+set statusline+=%03.03n\  " buffer number
+set statusline+=%{HumanReadableSize(getfsize(expand('%%:p')))}\  " file size
+set statusline+=%{fugitive#statusline()}\  " git branch (requires VimFugitive)
+set statusline+=%-.50F\  " file name
+set statusline+=%r\  " read-only flag '[RO]'
+set statusline+=%= " invisible separator
+set statusline+=%l/%L\  " current line / total line count
+set statusline+=%c\  " current column
 
 syntax on
 filetype plugin indent on

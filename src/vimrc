@@ -3,7 +3,7 @@ call pathogen#runtime_append_all_bundles()
 set term=xterm
 set guifont=Monospace\ 15
 set background=dark
-colorscheme koehler
+colorscheme solarized
 set guioptions-=e
 set guioptions-=m
 set guioptions-=r

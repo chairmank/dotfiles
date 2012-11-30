@@ -1,5 +1,7 @@
 hsetroot
 xsetroot -cursor_name crosshair
+xrdb -merge ~/.Xresources
+xrdb -merge ~/.Xresources_solarized
 
 # http://superuser.com/questions/371321/xmonad-focused-window-border-issues-with-virtualbox-vmware-guest-additions
 xcompmgr &

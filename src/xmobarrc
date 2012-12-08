@@ -1,7 +1,7 @@
 Config {
     font = "xft:Monospace-15"
-  , bgColor = "#000000"
-  , fgColor = "#cccccc"
+  , bgColor = "#073642"
+  , fgColor = "#839496"
   , position = Top
   , lowerOnStart = True
   , commands = [

@@ -5,6 +5,8 @@ import XMonad.Actions.CycleWS
 import XMonad.Util.CustomKeys
 import XMonad.Util.Run
 import qualified Data.Map as M
+import Solarized
+import Text.Printf
 
 main = xmonad =<< statusBar myBar myPP toggleStrutsKey myConfig
 
@@ -13,17 +15,20 @@ myConfig = defaultConfig
     , layoutHook = myLayoutHook
     , manageHook = myManageHook
     , borderWidth = 1
+    , normalBorderColor = solarizedBase02
+    , focusedBorderColor = solarizedCyan
     , keys = customKeys delKeys insKeys
     }
 
 -- 2 xmobar instances, one teed on the other
 myBar = "bash -c \"tee >(xmobar -x0) | xmobar -x1\""
 myPP = defaultPP {
-       ppCurrent = xmobarColor "#ff0000" "" . wrap "[" "]"
-     , ppVisible = xmobarColor "#cccccc" "" . wrap "[" "]"
-     , ppHidden = xmobarColor "#cccccc" ""
-     , ppLayout = xmobarColor "#cccccc" ""
-     , ppTitle = xmobarColor "#ff0000" "" . shorten 100 }
+       ppCurrent = xmobarColor solarizedCyan "" . wrap "[" "]"
+     , ppVisible = xmobarColor solarizedBase0 "" . wrap "[" "]"
+     , ppHidden = xmobarColor solarizedBase0 ""
+     , ppLayout = xmobarColor solarizedBase0 ""
+     , ppTitle = xmobarColor solarizedBase0 "" . shorten 100 }
+-- TODO: figure out how to set xmobar background color
 
 -- tiling layout
 myLayoutHook = Mirror tiled ||| tiled ||| Full
@@ -60,7 +65,10 @@ myManageHook = composeAll
 
 -- keybindings
 toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
-dmenu_command = "dmenu_run -fa 'Monospace-15' -nb '#000000' -nf '#cccccc' -sb '#000000' -sf '#ff0000'"
+
+dmenu_command = printf "dmenu_run -fa 'Monospace-15' -nb '%s' -nf '%s' -sb '%s' -sf '%s'"
+    solarizedBase02 solarizedBase0 solarizedYellow solarizedBase03
+
 -- delete the old dmenu command
 delKeys :: XConfig l -> [(KeyMask, KeySym)]
 delKeys conf@(XConfig {modMask = modMask}) =

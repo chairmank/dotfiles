@@ -28,3 +28,6 @@
 [submodule "lib/solarized"]
 	path = lib/solarized
 	url = https://github.com/altercation/solarized.git
+[submodule "lib/solarized-xmonad"]
+	path = lib/solarized-xmonad
+	url = https://github.com/ibotty/solarized-xmonad.git

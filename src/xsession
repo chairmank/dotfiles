@@ -1,4 +1,4 @@
-hsetroot
+hsetroot -solid "#002b36"
 xsetroot -cursor_name crosshair
 xrdb -load ~/.Xresources_solarized
 xrdb -merge ~/.Xresources

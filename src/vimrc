@@ -7,7 +7,7 @@ colorscheme solarized
 set guioptions-=e
 set guioptions-=m
 set guioptions-=r
-set guioptions+=l
+set guioptions-=l
 set guioptions-=T
 set guioptions+=c
 set wrap

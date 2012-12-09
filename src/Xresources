@@ -1,5 +1,5 @@
 Xft.antialias: 1
-XTerm*scrollBar: true
+XTerm*scrollBar: false
 XTerm*faceName: Monospace-15
 XTerm*jumpScroll: true
 XTerm*saveLines: 100000

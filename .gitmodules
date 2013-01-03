@@ -31,3 +31,6 @@
 [submodule "lib/solarized-xmonad"]
 	path = lib/solarized-xmonad
 	url = https://github.com/ibotty/solarized-xmonad.git
+[submodule "lib/vim-eunuch"]
+	path = lib/vim-eunuch
+	url = https://github.com/tpope/vim-eunuch.git

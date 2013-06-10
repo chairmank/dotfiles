@@ -1,5 +1,5 @@
 call pathogen#infect()
-call pathogen#runtime_append_all_bundles()
+call pathogen#incubate()
 set term=xterm
 set guifont=Monospace\ 15
 set background=dark

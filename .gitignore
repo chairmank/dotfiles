@@ -4,3 +4,7 @@ src/xmonad/xmonad.hi
 src/xmonad/xmonad.o
 src/xmonad/lib/*.hi
 src/xmonad/lib/*.o
+*~
+*.swo
+*.swp
+.netrwhist

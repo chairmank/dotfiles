@@ -7,4 +7,4 @@ fi
 
 export EDITOR="/usr/local/bin/vim"
 export JAVA_HOME="/usr/lib/jvm/java-6-sun"
-export PATH='/opt/hadoop/bin':${PATH}
+export PATH=${HOME}/bin:'/opt/hadoop/bin':${PATH}

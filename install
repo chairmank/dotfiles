@@ -2,6 +2,7 @@
 
 # git submodules must be updated before running this script for the
 # first time
+# git submodule foreach git pull origin master
 
 BASEDIR=`dirname $(readlink -f $0)`
 

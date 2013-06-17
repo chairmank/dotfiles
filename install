@@ -1,8 +1,7 @@
 #!/bin/sh
 
-# git submodules must be updated before running this script for the
-# first time
-# git submodule foreach git pull origin master
+# Update git submodules
+git submodule foreach git pull origin master
 
 BASEDIR=`dirname $(readlink -f $0)`
 
@@ -10,10 +9,10 @@ BASEDIR=`dirname $(readlink -f $0)`
 PROFILE="$HOME/.profile"
 if [ ! -f $PROFILE ]; then
   echo "Creating file symlink $PROFILE"
-  ln -s $BASEDIR/src/profile $PROFILE
 else
-  echo "$PROFILE file already exists; skipping"
+  echo "$PROFILE file already exists; overwriting"
 fi
+ln -sfn $BASEDIR/src/profile $PROFILE
 
 # Copy git-completion.bash to ~/.bash_completion.d/
 BASH_COMPLETION="$HOME/.bash_completion.d"
@@ -24,85 +23,87 @@ fi
 GIT_COMPLETION="$BASH_COMPLETION/git-completion.bash"
 if [ ! -f $GIT_COMPLETION ]; then
   echo "Creating file symlink $GIT_COMPLETION"
-  ln -s $BASEDIR/lib/git/contrib/completion/git-completion.bash $GIT_COMPLETION
 else
-  echo "$GIT_COMPLETION file already exists; skipping"
+  echo "$GIT_COMPLETION file already exists; overwriting"
 fi
+ln -sfn $BASEDIR/lib/git/contrib/completion/git-completion.bash $GIT_COMPLETION
 
 # Create symlinks to .bashrc and .bash_aliases
 BASHRC="$HOME/.bashrc"
 if [ ! -f $BASHRC ]; then
   echo "Creating file symlink $BASHRC"
-  ln -s $BASEDIR/src/bashrc $BASHRC
 else
-  echo "$BASHRC file already exists; skipping"
+  echo "$BASHRC file already exists; overwriting"
 fi
+ln -sfn $BASEDIR/src/bashrc $BASHRC
+
 BASH_ALIASES="$HOME/.bash_aliases"
 if [ ! -f $BASH_ALIASES ]; then
   echo "Creating file symlink $BASH_ALIASES"
-  ln -s $BASEDIR/src/bash_aliases $BASH_ALIASES
 else
-  echo "$BASH_ALIASES file already exists; skipping"
+  echo "$BASH_ALIASES file already exists; overwriting"
 fi
+ln -sfn $BASEDIR/src/bash_aliases $BASH_ALIASES
 
 # Create symlink to .xsession
 XSESSION="$HOME/.xsession"
 if [ ! -f $XSESSION ]; then
   echo "Creating file symlink $XSESSION"
-  ln -s $BASEDIR/src/xsession $XSESSION
 else
-  echo "$XSESSION file already exists; skipping"
+  echo "$XSESSION file already exists; overwriting"
 fi
+ln -sfn $BASEDIR/src/xsession $XSESSION
 
 # Create symlink to .Xresources
 XRESOURCES="$HOME/.Xresources"
 if [ ! -f $XRESOURCES ]; then
   echo "Creating file symlink $XRESOURCES"
-  ln -s $BASEDIR/src/Xresources $XRESOURCES
 else
-  echo "$XRESOURCES file already exists; skipping"
+  echo "$XRESOURCES file already exists; overwriting"
 fi
+ln -sfn $BASEDIR/src/Xresources $XRESOURCES
 
 # Create symlink to lib/solarized/xresources/solarized
 XRESOURCES_SOLARIZED="$HOME/.Xresources_solarized"
 if [ ! -f $XRESOURCES_SOLARIZED ]; then
   echo "Creating file symlink $XRESOURCES_SOLARIZED"
-  ln -s $BASEDIR/lib/solarized/xresources/solarized $XRESOURCES_SOLARIZED
 else
-  echo "$XRESOURCES_SOLARIZED file already exists; skipping"
+  echo "$XRESOURCES_SOLARIZED file already exists; overwriting"
 fi
+ln -sfn $BASEDIR/lib/solarized/xresources/solarized $XRESOURCES_SOLARIZED
 
 # Create symlinks to vim configuration
 VIMRC="$HOME/.vimrc"
 if [ ! -f $VIMRC ]; then
   echo "Creating file symlink $VIMRC"
-  ln -s $BASEDIR/src/vimrc $VIMRC
 else
-  echo "$VIMRC file already exists; skipping"
+  echo "$VIMRC file already exists; overwriting"
 fi
+ln -sfn $BASEDIR/src/vimrc $VIMRC
+
 VIMDIR="$HOME/.vim"
 if [ ! -d $VIMDIR ]; then
   echo "Creating directory symlink $VIMDIR"
-    ln -s $BASEDIR/src/vim $VIMDIR
 else
-  echo "$VIMDIR directory already exists; skipping"
+  echo "$VIMDIR directory already exists; overwriting"
 fi
+ln -sfn $BASEDIR/src/vim $VIMDIR
 
 # Create symlink to xmobarrc
 # http://projects.haskell.org/xmobar/
 XMOBARRC="$HOME/.xmobarrc"
 if [ ! -f $XMOBARRC ]; then
   echo "Creating file symlink $XMOBARRC"
-  ln -s $BASEDIR/src/xmobarrc $XMOBARRC
 else
-  echo "$XMOBARRC file already exists; skipping"
+  echo "$XMOBARRC file already exists; overwriting"
 fi
+ln -sfn $BASEDIR/src/xmobarrc $XMOBARRC
 
 # Create symlink to xmonad configuration
 XMONADDIR="$HOME/.xmonad"
 if [ ! -d $XMONADDIR ]; then
   echo "Creating directory symlink $XMONADDIR"
-  ln -s $BASEDIR/src/xmonad $XMONADDIR
 else
-  echo "$XMONADDIR directory already exists; skipping"
+  echo "$XMONADDIR directory already exists; overwriting"
 fi
+ln -sfn $BASEDIR/src/xmonad $XMONADDIR

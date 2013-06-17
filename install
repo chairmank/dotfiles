@@ -63,11 +63,11 @@ else
   echo "$XRESOURCES file already exists; skipping"
 fi
 
-# Create symlink to lib/solarized/.Xresources
+# Create symlink to lib/solarized/xresources/solarized
 XRESOURCES_SOLARIZED="$HOME/.Xresources_solarized"
 if [ ! -f $XRESOURCES_SOLARIZED ]; then
   echo "Creating file symlink $XRESOURCES_SOLARIZED"
-  ln -s $BASEDIR/lib/solarized/xresources-colors-solarized/Xresources $XRESOURCES_SOLARIZED
+  ln -s $BASEDIR/lib/solarized/xresources/solarized $XRESOURCES_SOLARIZED
 else
   echo "$XRESOURCES_SOLARIZED file already exists; skipping"
 fi

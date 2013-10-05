@@ -1,0 +1,3 @@
+xrdb -load ~/.Xresources_solarized
+xrdb -merge ~/.Xresources
+xautolock -locker slock -time 5 &

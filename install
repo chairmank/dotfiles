@@ -45,14 +45,14 @@ else
 fi
 ln -sfn $BASEDIR/src/bash_aliases $BASH_ALIASES
 
-# Create symlink to .xsession
-XSESSION="$HOME/.xsession"
-if [ ! -f $XSESSION ]; then
-  echo "Creating file symlink $XSESSION"
+# Create symlink to .xsessionrc
+XSESSIONRC="$HOME/.xsessionrc"
+if [ ! -f $XSESSIONRC ]; then
+  echo "Creating file symlink $XSESSIONRC"
 else
-  echo "$XSESSION file already exists; overwriting"
+  echo "$XSESSIONRC file already exists; overwriting"
 fi
-ln -sfn $BASEDIR/src/xsession $XSESSION
+ln -sfn $BASEDIR/src/xsessionrc $XSESSIONRC
 
 # Create symlink to .Xresources
 XRESOURCES="$HOME/.Xresources"

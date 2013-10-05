@@ -1,9 +1,0 @@
-xsetroot -solid "#002b36"
-xsetroot -cursor_name crosshair
-xrdb -load ~/.Xresources_solarized
-xrdb -merge ~/.Xresources
-
-# http://superuser.com/questions/371321/xmonad-focused-window-border-issues-with-virtualbox-vmware-guest-additions
-xcompmgr &
-xautolock -locker slock -time 5 &
-exec xmonad

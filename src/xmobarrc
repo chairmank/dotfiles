@@ -6,9 +6,13 @@ Config {
   , lowerOnStart = True
   , commands = [
       Run StdinReader
-    , Run Cpu ["-t", "CPU <total>"] 10
-    , Run Memory ["-t", "Memory <usedratio>%"] 10
-    , Run Battery ["-t", "Power <left>"] 30
+    , Run Cpu ["-t", "CPU <total>%"] 5
+    , Run Memory ["-t", "Memory <usedratio>%"] 5
+    , Run Battery ["-t", "Power <acstatus><left>%",
+                   "--",
+                   "-c", "energy_full",
+                   "-O", "↑", "-o", "↓",
+                   "-f", "ACAD/online"] 30
     , Run Date "%a %Y %b %d %H:%M:%S" "date" 10
     ]
   , sepChar = "%"

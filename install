@@ -72,6 +72,15 @@ else
 fi
 ln -sfn $BASEDIR/lib/solarized/xresources/solarized $XRESOURCES_SOLARIZED
 
+# Create symlink to .gitconfig
+GITCONFIG="$HOME/.gitconfig"
+if [ ! -f $GITCONFIG ]; then
+  echo "Creating file symlink $GITCONFIG"
+else
+  echo "$GITCONFIG file already exists; overwriting"
+fi
+ln -sfn $BASEDIR/src/gitconfig $GITCONFIG
+
 # Create symlinks to vim configuration
 VIMRC="$HOME/.vimrc"
 if [ ! -f $VIMRC ]; then

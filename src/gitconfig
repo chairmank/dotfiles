@@ -1,0 +1,8 @@
+[user]
+	name = Steve M. Kim
+        email = chairmanK@gmail.com
+[color]
+	branch = auto
+	status = auto
+	diff = auto
+	interactive = auto

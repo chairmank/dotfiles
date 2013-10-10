@@ -76,4 +76,10 @@ delKeys conf@(XConfig {modMask = modMask}) =
 -- add my own
 insKeys :: XConfig l -> [((KeyMask, KeySym), X ())]
 insKeys conf@(XConfig {modMask = modMask}) =
-    [ ((modMask, xK_p),   spawn dmenu_command) ]
+    [ ((modMask              , xK_p),      spawn dmenu_command)
+    , ((modMask              , xK_Right),  nextWS)
+    , ((modMask              , xK_Left),   prevWS)
+    , ((modMask .|. shiftMask, xK_Right),  shiftToNext)
+    , ((modMask .|. shiftMask, xK_Left),   shiftToPrev)
+    , ((modMask              , xK_Tab),    toggleWS)
+    ]

@@ -2,6 +2,7 @@ import XMonad
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.XPropManage
 import XMonad.Actions.CycleWS
+import XMonad.Actions.GroupNavigation
 import XMonad.Util.CustomKeys
 import XMonad.Util.Run
 import qualified Data.Map as M
@@ -14,6 +15,7 @@ myConfig = defaultConfig
     { terminal = "xterm -sl 10000"
     , layoutHook = myLayoutHook
     , manageHook = myManageHook
+    , logHook = historyHook
     , borderWidth = 1
     , normalBorderColor = solarizedBase02
     , focusedBorderColor = solarizedCyan
@@ -81,5 +83,5 @@ insKeys conf@(XConfig {modMask = modMask}) =
     , ((modMask              , xK_Left),   prevWS)
     , ((modMask .|. shiftMask, xK_Right),  shiftToNext)
     , ((modMask .|. shiftMask, xK_Left),   shiftToPrev)
-    , ((modMask              , xK_Tab),    toggleWS)
+    , ((modMask              , xK_Tab),    nextMatch History (return True))
     ]

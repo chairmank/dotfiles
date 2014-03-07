@@ -174,3 +174,6 @@ let vimclojure#DynamicHighlighting=1 " dynamically highlight functions
 
 " binding for NERDTree
 command NT NERDTreeToggle
+
+" increase index capacity for ctrlp
+let ctrlp_max_files=10000000

@@ -139,6 +139,7 @@ runtime! synmenu.vim
 au BufRead * se formatoptions=q
 au BufNewFile,BufRead *.thrift set filetype=thrift
 au BufNewFile,BufRead *.clj set filetype=clojure
+au BufNewFile,BufRead *.cljs set filetype=clojure
 
 " tab spacing by file type
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4

@@ -7,9 +7,6 @@
 [submodule "lib/VimClojure"]
 	path = lib/VimClojure
 	url = https://github.com/vim-scripts/VimClojure.git
-[submodule "lib/vim-slime"]
-	path = lib/vim-slime
-	url = git://github.com/jpalardy/vim-slime.git
 [submodule "lib/git"]
 	path = lib/git
 	url = https://github.com/git/git.git

@@ -8,9 +8,7 @@ Config {
       Run StdinReader
     , Run Battery ["-t", "Power <acstatus><left>%",
                    "--",
-                   "-c", "energy_full",
-                   "-O", "↑", "-o", "↓",
-                   "-f", "ACAD/online"] 30
+                   "-O", "↑", "-o", "↓", "-i", ""] 30
     , Run Date "%a %Y-%m-%dT%H:%M:%S%z" "localdate" 10
     ]
   , sepChar = "%"

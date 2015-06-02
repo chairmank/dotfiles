@@ -11,10 +11,10 @@ Config {
                    "-c", "energy_full",
                    "-O", "↑", "-o", "↓",
                    "-f", "ACAD/online"] 30
-    , Run Date "%a %Y %b %d %H:%M:%S" "date" 10
+    , Run Date "%a %Y-%m-%dT%H:%M:%S%z" "localdate" 10
     ]
   , sepChar = "%"
   , alignSep = "}{"
-  , template = "%StdinReader% }{ | %battery% | %date% "
+  , template = "%StdinReader% }{ | %battery% | %localdate% "
   }
 

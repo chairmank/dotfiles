@@ -2,7 +2,11 @@ call pathogen#infect('bundle/{}')
 set term=xterm
 set guifont=Monospace\ 15
 set background=dark
-colorscheme solarized
+if has('gui_running')
+  colorscheme solarized
+else
+  colorscheme default
+endif
 set guioptions-=e
 set guioptions-=m
 set guioptions-=r

@@ -108,6 +108,15 @@ else
 fi
 ln -sfn $BASEDIR/src/vim $VIMDIR
 
+# Create symlink to tmux.conf
+TMUXCONF="$HOME/.tmux.conf"
+if [ ! -f $TMUXCONF ]; then
+  echo "Creating file symlink $TMUXCONF"
+else
+  echo "$TMUXCONF file already exists; overwriting"
+fi
+ln -sfn $BASEDIR/src/tmux.conf $TMUXCONF
+
 # Create symlink to xmobarrc
 # http://projects.haskell.org/xmobar/
 XMOBARRC="$HOME/.xmobarrc"

@@ -149,6 +149,8 @@ autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType java setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType xml setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType json setlocal tabstop=4 shiftwidth=4 softtabstop=4
+autocmd FileType javascript setlocal tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType css setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType clojure setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType thrift setlocal tabstop=2 shiftwidth=2 softtabstop=2

@@ -1,5 +1,4 @@
 xrdb -load ~/.Xresources_solarized
 xrdb -merge ~/.Xresources
 xautolock -locker slock -time 5 &
-xmodmap ~/.Xmodmap
 xcompmgr &

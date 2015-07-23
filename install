@@ -46,15 +46,6 @@ else
 fi
 ln -sfn $BASEDIR/src/bash_aliases $BASH_ALIASES
 
-# Create symlink to .Xmodmap
-XMODMAP="$HOME/.Xmodmap"
-if [ ! -f $XMODMAP ]; then
-  echo "Creating file symlink $XMODMAP"
-else
-  echo "$XMODMAP file already exists; overwriting"
-fi
-ln -sfn $BASEDIR/src/Xmodmap $XMODMAP
-
 # Create symlink to .xsessionrc
 XSESSIONRC="$HOME/.xsessionrc"
 if [ ! -f $XSESSIONRC ]; then

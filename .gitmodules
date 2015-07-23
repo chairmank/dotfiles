@@ -25,3 +25,9 @@
 [submodule "lib/vim-eunuch"]
 	path = lib/vim-eunuch
 	url = https://github.com/tpope/vim-eunuch.git
+[submodule "lib/vim-jsx"]
+	path = lib/vim-jsx
+	url = https://github.com/mxw/vim-jsx.git
+[submodule "lib/vim-javascript"]
+	path = lib/vim-javascript
+	url = https://github.com/pangloss/vim-javascript.git

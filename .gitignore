@@ -1,0 +1,53 @@
+# Assumptions:
+# - The path of this file is ~/.gitignore
+# - It is tracked by a git repository at ~
+
+# Ignore everything unless explicitly un-ignored
+/*
+
+# Don't ignore this file
+!.gitignore
+
+# ~/.profile
+!.profile
+
+# ~/.bash_aliases, ~/.bashrc, ~/.bash_profile
+!.bash_aliases
+!.bashrc
+!.bash_profile
+
+# ~/.inputrc
+!.inputrc
+
+# ~/.Xresources
+!.Xresources
+
+# ~/.tmux.conf
+!.tmux.conf
+
+# ~/.xmonad
+!.xmonad/
+.xmonad/**
+!.xmonad/lib
+!.xmonad/xmonad-session-rc
+!.xmonad/**/*.hs
+
+# Ignore directories under ~/.config, unless overridden below
+!.config/
+.config/**
+
+# ~/.config/git
+!.config/git/
+!.config/git/config
+
+# ~/.config/nvim
+!.config/nvim/
+!.config/nvim/init.vim
+
+# ~/.config/xmobar
+!.config/xmobar/
+!.config/xmobar/xmobarrc
+
+# Ignore directories under ~/.local, unless overridden below
+!.local/
+.local/**

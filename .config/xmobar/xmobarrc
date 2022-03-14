@@ -1,0 +1,17 @@
+Config
+    { position = TopW L 100
+    , border = BottomB
+    , borderColor = "#073642"
+    , borderWidth = 2
+    , font = "xft:Source Code Variable-20"
+    , bgColor = "#002b36"
+    , fgColor = "#839496"
+    , commands =
+        [ Run StdinReader
+        , Run Memory ["-t", "<fc=#2aa198><used>/<total>MB</fc> <usedvbar>"] 1
+        , Run Cpu ["-p", "3", "-t", "<fc=#2aa198><total>%</fc> <vbar>"] 1
+        , Run BatteryP ["BAT", "BAT0", "BAT1"] ["-p", "3", "-t", "<fc=#2aa198><left>%<acstatus></fc> <leftvbar>", "--", "-O", "+", "-i", "-", "-o", "-"] 10
+        , Run Date "<fc=#2aa198>%Y-%m-%dT%H:%M:%S%z</fc>" "date" 1
+        ]
+    , template = "%StdinReader%}{  %memory%  %cpu%  %battery%  %date%"
+    }

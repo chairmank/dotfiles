@@ -1,0 +1,4 @@
+#!/bin/sh
+
+xrdb -load ~/.Xresources
+xsetroot -solid '#002b36'

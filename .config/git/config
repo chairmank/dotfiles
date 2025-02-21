@@ -1,0 +1,23 @@
+[alias]
+	l = log --format='%C(auto) %h %aN %ad %s %d' --date=iso-strict --graph --decorate --topo-order
+[diff]
+	algorithm = histogram
+	dirstat = lines,noncumulative,0
+	wsErrorHighlight = old,new,context
+[fetch]
+	prune = true
+	recurseSubmodules = true
+[format]
+	pretty = format:%C(auto)Commit:    %H %d%nParents:   %p%nTree:      %T%nAuthor:    %aN <%aE>%n           %ad%nCommitter: %cN <%cE>%n           %cd%n%n%w(0, 4, 4)%B%n
+[init]
+	defaultBranch = main
+[log]
+	date = iso8601-strict
+	decorate = true
+[push]
+	default = nothing
+	followTags = true
+[rebase]
+	stat = true
+[user]
+	useConfigOnly = true

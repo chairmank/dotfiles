@@ -1,0 +1,49 @@
+# Assumptions:
+# * The path of this file is ~/.gitignore
+# * It is tracked by a git repository at ~
+
+# Ignore everything unless explicitly un-ignored
+/*
+
+# Don't ignore this file
+!.gitignore
+
+# ~/.profile
+!.profile
+
+# bash
+!.bashrc
+!.bash_aliases
+!.bash_profile
+!.bash_login
+
+# readline
+!.inputrc
+
+# ignore directories under ~/.config, unless overridden below
+!.config/
+.config/**
+
+# git
+!.config/git/
+!.config/git/config
+
+# neovim
+!.config/nvim/
+!.config/nvim/init.lua
+!.config/nvim/.oxfmtrc.json
+!.config/nvim/.stylua.toml
+
+# xmobar
+!.config/xmobar/
+!.config/xmobar/xmobarrc
+
+# xmonad
+!.config/xmonad/
+!.config/xmonad/build
+!.config/xmonad/xmonad.hs
+!.config/xmonad/lib/*.hs
+
+# ignore directories under ~/.local, unless overridden below
+!.local/
+.local/**

@@ -1,0 +1,8 @@
+alias rm='rm -i'
+alias mv='mv -i'
+alias cp='cp -i'
+alias l='ls --color=auto --classify --time-style=+%FT%T -1'
+alias ll='l -l'
+alias la='l -lA'
+alias less='less -S'
+alias vim='nvim'

@@ -1,0 +1,8 @@
+Config
+  { template = "%StdinReader% }{ │ %battery% │ %date% ",
+    commands =
+      [ Run StdinReader,
+        Run Battery ["--template", "<leftvbar><acstatus><left>%", "--ppad", "3", "--", "-O", "↑", "-i", " ", "-o", "↓"] 10,
+        Run Date "%Y-%m-%dT%H:%M:%S%z" "date" 1
+      ]
+  }
